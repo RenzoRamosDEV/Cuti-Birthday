@@ -74,7 +74,7 @@ function Login({ onUnlock }){
       if(hash === PWD_HASH){
         setLockState({ attempts:0, until:0 });
         sessionStorage.setItem(SESSION_KEY, hash);
-        onUnlock();
+        window.location.reload();
       } else {
         const state    = getLockState();
         const attempts = state.attempts + 1;
