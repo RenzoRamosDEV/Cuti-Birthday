@@ -1,21 +1,22 @@
 // Hooks reutilizables
 
 // Aplica fade-in con IntersectionObserver a todos los elementos con clase .fadein
-function useFadeIn(){
+function useFadeIn(dep){
   React.useEffect(()=>{
+    let io;
     const connect = () => {
-      const els = document.querySelectorAll('.fadein');
-      const io  = new IntersectionObserver(entries => {
+      if(io) io.disconnect();
+      io = new IntersectionObserver(entries => {
         entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
       }, { threshold: .12 });
-      els.forEach(el => io.observe(el));
-      return io;
+      document.querySelectorAll('.fadein').forEach(el => io.observe(el));
     };
-    const io = connect();
-    // re-observa tras un tick para capturar elementos renderizados después del login
-    const t = setTimeout(() => { io.disconnect(); connect(); }, 100);
-    return () => { clearTimeout(t); io.disconnect(); };
-  }, []);
+    // intenta varias veces para capturar elementos que React renderiza de forma asíncrona
+    connect();
+    const t1 = setTimeout(connect, 100);
+    const t2 = setTimeout(connect, 400);
+    return () => { clearTimeout(t1); clearTimeout(t2); if(io) io.disconnect(); };
+  }, [dep]);
 }
 
 // Devuelve true si el viewport es menor al breakpoint dado (px)

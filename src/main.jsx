@@ -13,7 +13,7 @@ function App(){
     });
   }, []);
 
-  useFadeIn();
+  useFadeIn(unlocked);
 
   if(checking)  return null;
   if(!unlocked) return <Login onUnlock={() => setUnlocked(true)}/>;
