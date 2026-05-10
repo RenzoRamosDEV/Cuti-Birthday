@@ -1,5 +1,12 @@
 // src/components/sections.jsx — section components: Hero, Memories, EresTu, Carta
 
+const HERO_IMGS = {
+  lafotoclave:                   "https://www.photo-pick.com/online/linkedLogo?linkId=OquiESXb",
+  aquicreoquedespuesllorastesjaja: "https://www.photo-pick.com/online/linkedLogo?linkId=zVlRXf9t",
+  mifavorita:                    "https://www.photo-pick.com/online/linkedLogo?linkId=r4A8X19P",
+  sonrisaperfecta:               "https://www.photo-pick.com/online/linkedLogo?linkId=liHOuAA7",
+};
+
 function useIsMobile(bp=880){
   const [mobile, setMobile] = React.useState(()=>window.innerWidth<=bp);
   React.useEffect(()=>{
@@ -14,6 +21,7 @@ function useIsMobile(bp=880){
 // === HERO / Portada ==========================================================
 function Hero({ onStart, onSecret }){
   const mobile = useIsMobile();
+  const imgs = HERO_IMGS;
   return (
     <section className="paper grain" style={{
       position:'relative', minHeight:'100vh', padding:'40px 6vw 80px', overflow:'hidden',
@@ -81,20 +89,20 @@ function Hero({ onStart, onSecret }){
             display:'grid', gridTemplateColumns:'1fr 1fr',
             gap:16, justifyItems:'center', padding:'10px 0 30px',
           }}>
-            <Polaroid seed="hero-1" src="src/assets/hero/lafotoclave.jpg" caption="Posiblemente nuestra mejor foto jajaja" w={150} h={150} rot={6} tapeRot={4}/>
-            <Polaroid seed="hero-2" src="src/assets/hero/aquicreoquedespuesllorastesjaja.JPG" caption="Aqui creo que despues lloraste jajaja✿" w={150} h={150} rot={-4} tapeRot={10}/>
-            <Polaroid seed="hero-3" src="src/assets/hero/mifavorita.JPG" caption="Mi foto favorita" w={150} h={150} rot={-7} tapeRot={-10}/>
-            <Polaroid seed="hero-4" src="src/assets/hero/sonrisaperfecta.JPG" caption="Sonrisa perfectaa... ♡" w={150} h={150} rot={5} tapeRot={2}/>
+            <Polaroid seed="hero-1" src={imgs.lafotoclave} caption="Posiblemente nuestra mejor foto jajaja" w={150} h={150} rot={6} tapeRot={4}/>
+            <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={150} h={150} rot={-4} tapeRot={10}/>
+            <Polaroid seed="hero-3" src={imgs.mifavorita} caption="Mi foto favorita" w={150} h={150} rot={-7} tapeRot={-10}/>
+            <Polaroid seed="hero-4" src={imgs.sonrisaperfecta} caption="Sonrisa perfectaa... ♡" w={150} h={150} rot={5} tapeRot={2}/>
           </div>
         ) : (
           <div style={{position:'relative', height:540, minWidth:0}}>
-            <Polaroid seed="hero-1" src="src/assets/hero/lafotoclave.jpg" caption="Posiblemente nuestra mejor foto jajaja" w={180} h={180}
+            <Polaroid seed="hero-1" src={imgs.lafotoclave} caption="Posiblemente nuestra mejor foto jajaja" w={180} h={180}
               rot={6} tapeRot={4} style={{position:'absolute', top:0, right:240}}/>
-            <Polaroid seed="hero-2" src="src/assets/hero/aquicreoquedespuesllorastesjaja.JPG" caption="Aqui creo que despues lloraste jajaja✿" w={210} h={250}
+            <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={210} h={250}
               rot={-4} tapeRot={10} style={{position:'absolute', top:60, right:0}}/>
-            <Polaroid seed="hero-3" src="src/assets/hero/mifavorita.JPG" caption="Mi foto favorita" w={170} h={170}
+            <Polaroid seed="hero-3" src={imgs.mifavorita} caption="Mi foto favorita" w={170} h={170}
               rot={-7} tapeRot={-10} style={{position:'absolute', top:300, right:280}}/>
-            <Polaroid seed="hero-4" src="src/assets/hero/sonrisaperfecta.JPG" caption="Sonrisa perfectaa... ♡" w={200} h={210}
+            <Polaroid seed="hero-4" src={imgs.sonrisaperfecta} caption="Sonrisa perfectaa... ♡" w={200} h={210}
               rot={5} tapeRot={2} style={{position:'absolute', top:330, right:30}}/>
             <DoodleArrow w={140} h={70} color={SCRAP.ink}
               style={{position:'absolute', top:240, left:30, transform:'rotate(-8deg)'}}/>
