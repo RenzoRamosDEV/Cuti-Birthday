@@ -243,7 +243,7 @@ function Memories(){
       <div style={{position:'relative', maxWidth:1100, margin:'0 auto'}}>
         <SectionHeader
           eyebrow="capítulo I" number="07 momentos"
-          title={<>siete recuerdos <em>que de verdad valen.</em></>}
+          title={<>Algunos recuerdos <em>que está bien recordar.</em></>}            
           subtitle="Mejor pocos con peso, que muchos rellenando huecos. Aquí están los míos contigo, en orden."
         />
         <div className="memories-list">
