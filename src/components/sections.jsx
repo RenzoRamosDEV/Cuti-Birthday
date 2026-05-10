@@ -281,14 +281,36 @@ function Memories(){
 
 // === COSAS QUE TE HACEN TÚ ==================================================
 const TRAITS = [
-  { e:'ruido al masticar manzanas', d:'que cualquiera diría que es una falta. para mí es una banda sonora.', c:SCRAP.red },
-  { e:'tu lista de spotify "para llorar"', d:'tiene 137 canciones. la conozco entera. no te he dicho que la conozco entera.', c:SCRAP.blue },
-  { e:'cómo dices "no" sin decir "no"', d:'la cara, la pausa, los tres parpadeos. legendario.', c:SCRAP.green },
-  { e:'tu obsesión con la fruta perfecta', d:'has rechazado plátanos por su curvatura. te admiro y me preocupas.', c:SCRAP.yellow },
-  { e:'que llores con los anuncios', d:'el de la lotería de 2019 te dejó dos días mal. nunca me reiré (mucho).', c:SCRAP.red },
-  { e:'cómo recuerdas todos los cumpleaños', d:'menos el tuyo, que siempre se te olvida hasta que llega.', c:SCRAP.blue },
-  { e:'tu manía de oler los libros nuevos', d:'antes de leerlos. después de leerlos. y a veces durante.', c:SCRAP.green },
-  { e:'que siempre digas "una cosa rápida"', d:'y luego sean cuarenta minutos. los mejores cuarenta minutos.', c:SCRAP.red },
+  {
+    e: 'La vanidad',
+    d: 'Lo de mirarte al espejo constantemente debería ser ilegal jajaja.',
+    c: SCRAP.red
+  },
+  {
+    e: 'Lo de poner alarma y no despertar',
+    d: 'Esto me parece delito federal. Lo de poner la alarma y ni siquiera apagarla es muy loco.',
+    c: SCRAP.blue
+  },
+  {
+    e: 'Tu lado chef',
+    d: 'Posiblemente una de las épocas más locas. Hubo riesgo de intoxicación y yo de catador oficial de la comida jajaja.',
+    c: SCRAP.green
+  },
+  {
+    e: 'Sonrisa perfecta',
+    d: 'Tu sonrisa ilumina cualquier lugar, pero se te ha subido un poco a la cabeza jajaja.',
+    c: SCRAP.yellow
+  },
+  {
+    e: 'Luchadora en general',
+    d: 'Creo que, después de tanto ñete que nos hemos metido, te has vuelto algo sanguinaria.',
+    c: SCRAP.red
+  },
+  {
+    e: 'Mosca e inteligente',
+    d: 'Siempre atenta y perspicaz. Me sorprende la capacidad de aprender que tienes: o sueltas puro floro o sabes demasiado jajaj.',
+    c: SCRAP.blue
+  }
 ];
 
 function Traits(){
@@ -299,8 +321,8 @@ function Traits(){
       <div style={{position:'relative', maxWidth:1100, margin:'0 auto'}}>
         <SectionHeader
           eyebrow="capítulo II" number="cosas que te hacen tú"
-          title={<>esto eres <span className="underline-wavy">tú.</span></>}
-          subtitle="Lo importante no son las cosas grandes. Son estas. Las que solo nota la gente que te quiere mucho."
+          title={<>cosas tuyas</>}
+          subtitle="Algunas pocas cosas que hacen que seas tú."
         />
         <div className="traits-grid" style={{
           display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))',
@@ -342,7 +364,7 @@ function Traits(){
               marginTop:10, font:'italic 300 32px/1.15 "Fraunces"', color:SCRAP.ink, letterSpacing:'-.01em',
             }}>
               eres la persona que mejor me conoce. y yo, la persona que mejor te conoce.
-              eso es <span style={{color:SCRAP.red, fontFamily:'"Homemade Apple", cursive', fontStyle:'normal', fontSize:'.9em'}}>raro</span> y <span style={{color:SCRAP.red, fontFamily:'"Homemade Apple", cursive', fontStyle:'normal', fontSize:'.9em'}}>bonito</span>.
+              eso es <span style={{color:SCRAP.red, fontFamily:'"Homemade Apple", cursive', fontStyle:'normal', fontSize:'.9em'}}>bonito</span>.
             </p>
           </div>
         </div>
