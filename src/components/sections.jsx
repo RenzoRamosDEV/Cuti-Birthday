@@ -19,7 +19,7 @@ function useIsMobile(bp=880){
 }
 
 // === HERO / Portada ==========================================================
-function Hero({ onStart, onSecret }){
+function Hero({ onStart }){
   const mobile = useIsMobile();
   const imgs = HERO_IMGS;
   return (
