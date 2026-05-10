@@ -30,10 +30,10 @@ function Hero({ onStart }){
       <header style={{
         display:'flex', justifyContent:'space-between', alignItems:'center', maxWidth:1280, margin:'0 auto',
       }}>
-        <div style={{font:'600 14px "Caveat"', color:SCRAP.inkSoft, letterSpacing:'.04em'}}>
+        <div className="hero-logo" style={{font:'600 28px "Caveat"', color:SCRAP.inkSoft, letterSpacing:'.04em'}}>
           ✿ Joselyn
         </div>
-        <nav style={{display:'flex', gap:24, font:'500 14px "Caveat"', color:SCRAP.ink}}>
+        <nav className="hero-nav" style={{display:'flex', gap:24, font:'500 28px "Caveat"', color:SCRAP.ink}}>
           <a href="#portada" style={navLink(true)}>portada</a>
           <a href="#recuerdos" style={navLink()}>recuerdos</a>
           <a href="#tu" style={navLink()}>cosas tuyas</a>
@@ -121,6 +121,8 @@ function Hero({ onStart }){
       <style>{`
         @media (max-width: 880px){
           .hero-grid{grid-template-columns: 1fr !important; gap: 16px !important}
+          .hero-nav{ display: none !important }
+          .hero-logo{ font-size: 22px !important }
         }
       `}</style>
     </section>
@@ -485,12 +487,12 @@ function Footer(){
       borderTop:`1px dashed ${SCRAP.inkSoft}66`,
     }}>
       <div style={{
-        font:'500 14px "Caveat"', color:SCRAP.inkSoft, marginBottom:8,
+        font:'500 24px "Caveat"', color:SCRAP.inkSoft, marginBottom:8,
       }}>
         Una hecha por un Bibi jajaja, para mi motivo personificado de vivir.
       </div>
       <div style={{
-        font:'400 13px "Caveat"', color:SCRAP.inkSoft+'aa',
+        font:'400 24px "Caveat"', color:SCRAP.inkSoft+'aa',
       }}>
         ✿ ✿ ✿
       </div>
