@@ -21,7 +21,15 @@ const PALETTES = [
   ['#c5dcd6','#7ea69c','#1f3a32'],['#e8c5a8','#b8806a','#3a1f15'],
 ];
 function hashStr(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=(h*16777619)>>>0;}return h;}
-function Photo({seed='x', caption, style, children}){
+function Photo({seed='x', src, caption, style, children}){
+  if(src){
+    return (
+      <div style={{position:'relative',overflow:'hidden',...style}}>
+        <img src={src} alt={caption||seed} style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+        {children}
+      </div>
+    );
+  }
   const [a,b,c]=PALETTES[hashStr(seed)%PALETTES.length];
   const ang=(hashStr(seed+'a')%60)-30+135;
   const x1=(hashStr(seed+'1')%60)+10, y1=(hashStr(seed+'2')%60)+10;
@@ -56,7 +64,7 @@ function Tape({left='50%', top='-9px', w=70, rot=-6, color='rgba(220,200,140,.6)
 }
 
 // --- polaroid card ---
-function Polaroid({seed, caption, w=200, h=220, rot=-3, tapeRot=-6, tapeColor, style, children}){
+function Polaroid({seed, src, caption, w=200, h=220, rot=-3, tapeRot=-6, tapeColor, style, children}){
   return (
     <div style={{
       position:'relative', width:w, padding:'10px 10px 38px',
@@ -65,7 +73,7 @@ function Polaroid({seed, caption, w=200, h=220, rot=-3, tapeRot=-6, tapeColor, s
       ...style,
     }}>
       <Tape rot={tapeRot} color={tapeColor}/>
-      <Photo seed={seed} style={{ width:'100%', height:h }}/>
+      <Photo seed={seed} src={src} style={{ width:'100%', height:h }}/>
       {caption && (<div style={{
         marginTop:8, font:'500 17px "Caveat",cursive', color:SCRAP.ink, textAlign:'center',
         lineHeight:1.1
