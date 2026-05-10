@@ -149,12 +149,18 @@ function Confetti({active, count=140, onDone}){
 // --- IntersectionObserver hook to fade-in sections ---
 function useFadeIn(){
   React.useEffect(()=>{
-    const els=document.querySelectorAll('.fadein');
-    const io=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-    },{threshold:.12});
-    els.forEach(el=>io.observe(el));
-    return ()=>io.disconnect();
+    const connect = () => {
+      const els=document.querySelectorAll('.fadein');
+      const io=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+      },{threshold:.12});
+      els.forEach(el=>io.observe(el));
+      return io;
+    };
+    const io = connect();
+    // re-observe after a tick to catch elements rendered after login
+    const t = setTimeout(()=>{ io.disconnect(); connect(); }, 100);
+    return ()=>{ clearTimeout(t); io.disconnect(); };
   },[]);
 }
 
