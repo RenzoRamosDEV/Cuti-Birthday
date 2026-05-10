@@ -1,2 +1,2 @@
-src/assets/
-src/config.js
+src/assets/*
+!src/assets/images.json

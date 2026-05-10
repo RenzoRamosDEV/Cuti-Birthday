@@ -412,7 +412,7 @@ function Carta({ onOpen, opened }){
             boxShadow:'4px 4px 0 '+SCRAP.red+', 0 12px 40px rgba(0,0,0,.4)',
             transition:'transform .15s',
           }}>
-            ✉ abrir la carta · y soltar el confeti
+            ✉ Leer cartita
           </button>
         )}
 
