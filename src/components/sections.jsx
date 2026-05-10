@@ -1,7 +1,19 @@
 // src/components/sections.jsx — section components: Hero, Memories, EresTu, Carta
 
+function useIsMobile(bp=880){
+  const [mobile, setMobile] = React.useState(()=>window.innerWidth<=bp);
+  React.useEffect(()=>{
+    const mq=window.matchMedia(`(max-width:${bp}px)`);
+    const fn=e=>setMobile(e.matches);
+    mq.addEventListener('change',fn);
+    return ()=>mq.removeEventListener('change',fn);
+  },[bp]);
+  return mobile;
+}
+
 // === HERO / Portada ==========================================================
 function Hero({ onStart, onSecret }){
+  const mobile = useIsMobile();
   return (
     <section className="paper grain" style={{
       position:'relative', minHeight:'100vh', padding:'40px 6vw 80px', overflow:'hidden',
@@ -11,7 +23,7 @@ function Hero({ onStart, onSecret }){
         display:'flex', justifyContent:'space-between', alignItems:'center', maxWidth:1280, margin:'0 auto',
       }}>
         <div style={{font:'600 14px "Caveat"', color:SCRAP.inkSoft, letterSpacing:'.04em'}}>
-          ✿ para Joselyn — 10 / 05 / 2026
+          ✿ Joselyn
         </div>
         <nav style={{display:'flex', gap:24, font:'500 14px "Caveat"', color:SCRAP.ink}}>
           <a href="#portada" style={navLink(true)}>portada</a>
@@ -63,27 +75,38 @@ function Hero({ onStart, onSecret }){
           </div>
         </div>
 
-        {/* Polaroid cluster — desktop: absolute, mobile: grid */}
-        <div className="polaroid-cluster" style={{position:'relative', height:540, minWidth:0}}>
-          <Polaroid seed="hero-1" caption="el día que..." w={180} h={180}
-            rot={6} tapeRot={4} style={{position:'absolute', top:0, right:240}}/>
-          <Polaroid seed="hero-2" caption="verano '23 ✿" w={210} h={250}
-            rot={-4} tapeRot={10} style={{position:'absolute', top:60, right:0}}/>
-          <Polaroid seed="hero-3" caption="tu favorita" w={170} h={170}
-            rot={-7} tapeRot={-10} style={{position:'absolute', top:300, right:280}}/>
-          <Polaroid seed="hero-4" caption="hermanas ♡" w={200} h={210}
-            rot={5} tapeRot={2} style={{position:'absolute', top:330, right:30}}/>
-
-          <DoodleArrow w={140} h={70} color={SCRAP.ink}
-            style={{position:'absolute', top:240, left:30, transform:'rotate(-8deg)'}}/>
+        {/* Polaroid cluster */}
+        {mobile ? (
           <div style={{
-            position:'absolute', top:235, left:60,
-            font:'400 17px "Caveat"', color:SCRAP.ink, transform:'rotate(-6deg)',
-            maxWidth:140,
+            display:'grid', gridTemplateColumns:'1fr 1fr',
+            gap:16, justifyItems:'center', padding:'10px 0 30px',
           }}>
-            esto eres tú no me lo niegues
+            <Polaroid seed="hero-1" caption="el día que..." w={150} h={150} rot={6} tapeRot={4}/>
+            <Polaroid seed="hero-2" caption="verano '23 ✿" w={150} h={150} rot={-4} tapeRot={10}/>
+            <Polaroid seed="hero-3" caption="tu favorita" w={150} h={150} rot={-7} tapeRot={-10}/>
+            <Polaroid seed="hero-4" caption="hermanas ♡" w={150} h={150} rot={5} tapeRot={2}/>
           </div>
-        </div>
+        ) : (
+          <div style={{position:'relative', height:540, minWidth:0}}>
+            <Polaroid seed="hero-1" caption="el día que..." w={180} h={180}
+              rot={6} tapeRot={4} style={{position:'absolute', top:0, right:240}}/>
+            <Polaroid seed="hero-2" caption="verano '23 ✿" w={210} h={250}
+              rot={-4} tapeRot={10} style={{position:'absolute', top:60, right:0}}/>
+            <Polaroid seed="hero-3" caption="tu favorita" w={170} h={170}
+              rot={-7} tapeRot={-10} style={{position:'absolute', top:300, right:280}}/>
+            <Polaroid seed="hero-4" caption="hermanas ♡" w={200} h={210}
+              rot={5} tapeRot={2} style={{position:'absolute', top:330, right:30}}/>
+            <DoodleArrow w={140} h={70} color={SCRAP.ink}
+              style={{position:'absolute', top:240, left:30, transform:'rotate(-8deg)'}}/>
+            <div style={{
+              position:'absolute', top:235, left:60,
+              font:'400 17px "Caveat"', color:SCRAP.ink, transform:'rotate(-6deg)',
+              maxWidth:140,
+            }}>
+              esto eres tú no me lo niegues
+            </div>
+          </div>
+        )}
       </div>
 
       {/* hidden button — bottom-left */}
@@ -108,37 +131,11 @@ function Hero({ onStart, onSecret }){
       <div style={{
         position:'absolute', bottom:32, left:'50%', transform:'translateX(-50%)',
         font:'400 11px "Fraunces"', color:SCRAP.inkSoft, letterSpacing:'.3em',
-      }}>— 01 / 09 —</div>
+      }}></div>
 
       <style>{`
         @media (max-width: 880px){
           .hero-grid{grid-template-columns: 1fr !important; gap: 16px !important}
-
-          /* cluster: cambiar de absolute a grid 2x2 */
-          .polaroid-cluster{
-            position: static !important;
-            height: auto !important;
-            display: grid !important;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            justify-items: center;
-            padding: 20px 0 40px;
-          }
-          /* quitar absolute de cada polaroid hijo directo */
-          .polaroid-cluster > div[style]{
-            position: static !important;
-            top: auto !important; right: auto !important;
-          }
-          /* ocultar la flecha + texto doodle en mobile */
-          .polaroid-cluster > svg,
-          .polaroid-cluster > div:last-child{
-            display: none !important;
-          }
-        }
-        @media (max-width: 480px){
-          .polaroid-cluster{
-            grid-template-columns: 1fr !important;
-          }
         }
       `}</style>
     </section>
