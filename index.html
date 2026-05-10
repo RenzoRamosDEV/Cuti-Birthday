@@ -2,22 +2,69 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
-<title>19 años contigo en recuerdos · Joselyn</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Página privada — no indexar en buscadores -->
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- Título y descripción -->
+<title>19 años contigo en recuerdos · Joselyn</title>
+<meta name="description" content="Una página hecha con cariño para celebrar los 19 años de Joselyn — recuerdos, momentos y una carta de su hermano." />
+<meta name="author" content="Renzo Ramos" />
+
+<!-- Favicon -->
+<link rel="icon"             type="image/png" sizes="32x32" href="src/assets/JOSELYNLOGO.png" />
+<link rel="apple-touch-icon"                  sizes="180x180" href="src/assets/JOSELYNLOGO.png" />
+
+<!-- Open Graph (WhatsApp, iMessage, redes sociales) -->
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="19 años contigo en recuerdos · Joselyn 🌸" />
+<meta property="og:description" content="Una página hecha con cariño para celebrar los 19 años de Joselyn — recuerdos, momentos y una carta de su hermano." />
+<meta property="og:image"       content="src/assets/JOSELYNLOGO.png" />
+<meta property="og:image:width"  content="500" />
+<meta property="og:image:height" content="500" />
+<meta property="og:image:alt"   content="Logo de Joselyn" />
+<meta property="og:locale"      content="es_ES" />
+
+<!-- Twitter / X card -->
+<meta name="twitter:card"        content="summary" />
+<meta name="twitter:title"       content="19 años contigo en recuerdos · Joselyn 🌸" />
+<meta name="twitter:description" content="Una página hecha con cariño para celebrar los 19 años de Joselyn." />
+<meta name="twitter:image"       content="src/assets/JOSELYNLOGO.png" />
+
+<!-- Color del navegador en móvil -->
+<meta name="theme-color" content="#f3e9d2" />
+
+<!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Homemade+Apple&family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
 <link rel="stylesheet" href="src/styles/main.css" />
 </head>
 <body>
 <div id="root"></div>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"         integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"         integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-<script type="text/babel" src="src/components/helpers.jsx"></script>
-<script type="text/babel" src="src/components/sections.jsx"></script>
-<script type="text/babel" src="src/app.jsx"></script>
+<!-- 1. Base: colores y utilidades -->
+<script src="src/theme.js"></script>
+<!-- 2. Hooks reutilizables -->
+<script src="src/hooks.js"></script>
+<!-- 3. Componentes UI -->
+<script type="text/babel" src="src/components/ui/polaroid.jsx"></script>
+<script type="text/babel" src="src/components/ui/doodles.jsx"></script>
+<!-- 4. Secciones de la página -->
+<script type="text/babel" src="src/components/sections/hero.jsx"></script>
+<script type="text/babel" src="src/components/sections/memories.jsx"></script>
+<script type="text/babel" src="src/components/sections/traits.jsx"></script>
+<script type="text/babel" src="src/components/sections/carta.jsx"></script>
+<script type="text/babel" src="src/components/sections/footer.jsx"></script>
+<!-- 5. Autenticación -->
+<script type="text/babel" src="src/auth.jsx"></script>
+<!-- 6. Raíz de la app -->
+<script type="text/babel" src="src/main.jsx"></script>
 </body>
 </html>
