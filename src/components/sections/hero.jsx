@@ -68,21 +68,12 @@ function Hero({ onStart }){
           </div>
         </div>
 
-        {mobile ? (
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, justifyItems:'center', padding:'10px 0 30px' }}>
-            <Polaroid seed="hero-1" src={imgs.lafotoclave}                    caption="Posiblemente nuestra mejor foto jajaja"  w={150} h={150} rot={6}  tapeRot={4}/>
-            <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={150} h={150} rot={-4} tapeRot={10}/>
-            <Polaroid seed="hero-3" src={imgs.mifavorita}                     caption="Mi foto favorita"                        w={150} h={150} rot={-7} tapeRot={-10}/>
-            <Polaroid seed="hero-4" src={imgs.sonrisaperfecta}                caption="Sonrisa perfectaa... ♡"                  w={150} h={150} rot={5}  tapeRot={2}/>
-          </div>
-        ) : (
-          <div style={{ position:'relative', height:660, minWidth:0 }}>
-            <Polaroid seed="hero-1" src={imgs.lafotoclave}                     caption="Posiblemente nuestra mejor foto jajaja"  w={180} h={180} rot={6}  tapeRot={4}   style={{position:'absolute', top:0,   right:260, zIndex:2}}/>
-            <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={200} h={230} rot={-4} tapeRot={10}  style={{position:'absolute', top:20,  right:0,   zIndex:3}}/>
-            <Polaroid seed="hero-3" src={imgs.mifavorita}                      caption="Mi foto favorita"                        w={170} h={170} rot={-7} tapeRot={-10} style={{position:'absolute', top:330, right:300, zIndex:1}}/>
-            <Polaroid seed="hero-4" src={imgs.sonrisaperfecta}                 caption="Sonrisa perfectaa... ♡"                  w={200} h={210} rot={5}  tapeRot={2}   style={{position:'absolute', top:420, right:50,  zIndex:2}}/>
-          </div>
-        )}
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:mobile?16:24, justifyItems:'center', padding:'10px 0 30px' }}>
+          <Polaroid seed="hero-1" src={imgs.lafotoclave}                     caption="Posiblemente nuestra mejor foto jajaja"  w={mobile?150:200} h={mobile?150:200} rot={6}  tapeRot={4}/>
+          <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={mobile?150:200} h={mobile?150:200} rot={-4} tapeRot={10}/>
+          <Polaroid seed="hero-3" src={imgs.mifavorita}                      caption="Mi foto favorita"                        w={mobile?150:200} h={mobile?150:200} rot={-7} tapeRot={-10}/>
+          <Polaroid seed="hero-4" src={imgs.sonrisaperfecta}                 caption="Sonrisa perfectaa... ♡"                  w={mobile?150:200} h={mobile?150:200} rot={5}  tapeRot={2}/>
+        </div>
       </div>
 
       <div style={{
