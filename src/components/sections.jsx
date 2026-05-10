@@ -69,7 +69,7 @@ function Hero({ onStart, onSecret }){
             color:SCRAP.inkSoft,
           }}>
             Una página que no llena el feliz cumple de relleno —
-            sino con <span className="underline-wavy">siete momentos</span> que
+            sino con <span className="underline-wavy">algunos momentos</span> que
             de verdad valen, una sección entera sobre lo que te hace tú,
             y una carta al final.
           </p>
@@ -77,9 +77,6 @@ function Hero({ onStart, onSecret }){
             <button onClick={onStart} style={ctaPrimary()}>
               empezar a recordar →
             </button>
-            <span style={{font:'400 14px "Caveat"', color:SCRAP.inkSoft}}>
-              (10 min de lectura)
-            </span>
           </div>
         </div>
 
@@ -104,15 +101,6 @@ function Hero({ onStart, onSecret }){
               rot={-7} tapeRot={-10} style={{position:'absolute', top:300, right:280}}/>
             <Polaroid seed="hero-4" src={imgs.sonrisaperfecta} caption="Sonrisa perfectaa... ♡" w={200} h={210}
               rot={5} tapeRot={2} style={{position:'absolute', top:330, right:30}}/>
-            <DoodleArrow w={140} h={70} color={SCRAP.ink}
-              style={{position:'absolute', top:240, left:30, transform:'rotate(-8deg)'}}/>
-            <div style={{
-              position:'absolute', top:235, left:60,
-              font:'400 17px "Caveat"', color:SCRAP.ink, transform:'rotate(-6deg)',
-              maxWidth:140,
-            }}>
-              esto eres tú no me lo niegues
-            </div>
           </div>
         )}
       </div>
