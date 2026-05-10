@@ -164,6 +164,13 @@ function SectionHeader({ eyebrow, number, title, subtitle, color=SCRAP.red }){
 }
 
 // === MEMORIES ===============================================================
+const CAP1_IMGS = {
+  mem1: "https://www.photo-pick.com/online/linkedLogo?linkId=thYHa99f",
+  mem2: "https://www.photo-pick.com/online/linkedLogo?linkId=cokbUwNZ",
+  mem3: "https://www.photo-pick.com/online/linkedLogo?linkId=MBNiWlDW",
+  mem4: "https://www.photo-pick.com/online/linkedLogo?linkId=qjlVD2wd",
+};
+
 const MEMORIES = [
   { seed:'mem1', date:'agosto 2018', title:'la noche que rompimos el espejo',
     caption:'pero qué hicimos',
@@ -181,18 +188,6 @@ const MEMORIES = [
     caption:'orgullosa',
     body:'Yo lloré más. Mamá lloró más todavía. Papá fingió que no, pero papá nunca finge tan mal. Esa foto la tengo de fondo de pantalla desde entonces.',
     rot:3, tapeRot:-4, tapeColor:'rgba(93,122,79,.45)' },
-  { seed:'mem5', date:'una madrugada de 2023', title:'el karaoke en la cocina',
-    caption:'a las 3am',
-    body:'Cantamos como si nadie nos pudiera oír. Los vecinos sí podían. La señora del 4ºB todavía no me saluda. Mereció totalmente la pena.',
-    rot:-4, tapeRot:8, tapeColor:'rgba(220,185,201,.55)' },
-  { seed:'mem6', date:'tu primer trabajo · 2024', title:'el día que firmaste el contrato',
-    caption:'oficial',
-    body:'Volviste a casa caminando porque el bus tardaba mucho y querías contármelo en persona. Llegaste sin aliento. "Lo conseguí". Sí, lo conseguiste.',
-    rot:2, tapeRot:-6, tapeColor:'rgba(197,74,58,.4)' },
-  { seed:'mem7', date:'hace dos meses', title:'la noche que me dijiste',
-    caption:'gracias por estar',
-    body:'No hace falta que te diga lo que dijiste. Tú sabes. Yo sé. Por eso esta página existe.',
-    rot:-2, tapeRot:5, tapeColor:'rgba(74,106,138,.5)' },
 ];
 
 function MemoryCard({ m, idx }){
@@ -204,7 +199,7 @@ function MemoryCard({ m, idx }){
       direction: flip ? 'rtl' : 'ltr',
     }}>
       <div style={{direction:'ltr', display:'grid', placeItems:'center'}}>
-        <Polaroid seed={m.seed} caption={m.caption} w={300} h={320}
+        <Polaroid seed={m.seed} src={CAP1_IMGS[m.seed]} caption={m.caption} w={300} h={320}
           rot={m.rot} tapeRot={m.tapeRot} tapeColor={m.tapeColor}/>
       </div>
       <div style={{direction:'ltr', position:'relative', maxWidth:440}}>
