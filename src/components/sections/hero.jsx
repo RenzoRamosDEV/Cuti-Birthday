@@ -44,9 +44,9 @@ function Hero({ onStart }){
       </header>
 
       <div id="portada" className="hero-grid" style={{
-        position:'relative', maxWidth:1280, margin:'0 auto',
-        display:'grid', gridTemplateColumns:'minmax(0,1fr) minmax(0,540px)',
-        gap:40, alignItems:'center', minHeight:'74vh', paddingTop:'4vh',
+        position:'relative', maxWidth:600, margin:'0 auto',
+        display:'grid', gridTemplateColumns:'1fr',
+        gap:32, paddingTop:'4vh', paddingBottom:'4vh',
       }}>
         <div>
           <div style={{ font:'500 13px "Caveat"', letterSpacing:'.3em', textTransform:'uppercase', color:SCRAP.red, marginBottom:6 }}>
