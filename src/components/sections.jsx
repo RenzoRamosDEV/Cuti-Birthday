@@ -354,7 +354,7 @@ function Traits(){
         <div className="fadein" style={{
           marginTop:60, display:'flex', alignItems:'center', justifyContent:'center', gap:40, flexWrap:'wrap',
         }}>
-          <Polaroid seed="trait-bonus" caption="tú · cualquier martes" w={220} h={240}
+          <Polaroid seed="trait-bonus" src="https://www.photo-pick.com/online/linkedLogo?linkId=v0KVmerR" caption="Jajaja esta foto me gusta mucho pero esta mas borrosa que nuestro futuro xD" w={220} h={240}
             rot={-3} tapeRot={6}/>
           <div style={{maxWidth:340}}>
             <div style={{font:'500 13px "Caveat"', letterSpacing:'.3em', textTransform:'uppercase', color:SCRAP.red}}>
