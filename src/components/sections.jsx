@@ -108,8 +108,8 @@ function Hero({ onStart, onSecret }){
 
       {/* scroll cue */}
       <div style={{
-        position:'absolute', bottom:32, right:'5vw', display:'flex', alignItems:'center', gap:10,
-        font:'400 15px "Caveat"', color:SCRAP.inkSoft,
+        position:'absolute', bottom:32, left:'50%', transform:'translateX(-50%)',
+        font:'400 15px "Caveat"', color:SCRAP.inkSoft, whiteSpace:'nowrap',
       }}>
         scroll para los recuerdos ↓
       </div>
