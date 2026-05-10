@@ -76,11 +76,11 @@ function Hero({ onStart }){
             <Polaroid seed="hero-4" src={imgs.sonrisaperfecta}                caption="Sonrisa perfectaa... ♡"                  w={150} h={150} rot={5}  tapeRot={2}/>
           </div>
         ) : (
-          <div style={{ position:'relative', height:600, minWidth:0 }}>
-            <Polaroid seed="hero-1" src={imgs.lafotoclave}                     caption="Posiblemente nuestra mejor foto jajaja"  w={180} h={180} rot={6}  tapeRot={4}   style={{position:'absolute', top:0,   right:250, zIndex:2}}/>
-            <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={210} h={250} rot={-4} tapeRot={10}  style={{position:'absolute', top:40,  right:0,   zIndex:3}}/>
-            <Polaroid seed="hero-3" src={imgs.mifavorita}                      caption="Mi foto favorita"                        w={170} h={170} rot={-7} tapeRot={-10} style={{position:'absolute', top:310, right:290, zIndex:1}}/>
-            <Polaroid seed="hero-4" src={imgs.sonrisaperfecta}                 caption="Sonrisa perfectaa... ♡"                  w={200} h={210} rot={5}  tapeRot={2}   style={{position:'absolute', top:370, right:40,  zIndex:2}}/>
+          <div style={{ position:'relative', height:660, minWidth:0 }}>
+            <Polaroid seed="hero-1" src={imgs.lafotoclave}                     caption="Posiblemente nuestra mejor foto jajaja"  w={180} h={180} rot={6}  tapeRot={4}   style={{position:'absolute', top:0,   right:260, zIndex:2}}/>
+            <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={200} h={230} rot={-4} tapeRot={10}  style={{position:'absolute', top:20,  right:0,   zIndex:3}}/>
+            <Polaroid seed="hero-3" src={imgs.mifavorita}                      caption="Mi foto favorita"                        w={170} h={170} rot={-7} tapeRot={-10} style={{position:'absolute', top:330, right:300, zIndex:1}}/>
+            <Polaroid seed="hero-4" src={imgs.sonrisaperfecta}                 caption="Sonrisa perfectaa... ♡"                  w={200} h={210} rot={5}  tapeRot={2}   style={{position:'absolute', top:420, right:50,  zIndex:2}}/>
           </div>
         )}
       </div>
