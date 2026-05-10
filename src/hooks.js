@@ -3,9 +3,17 @@
 // Aplica fade-in con IntersectionObserver a todos los elementos con clase .fadein
 function useFadeIn(dep){
   React.useEffect(()=>{
+    if(!dep) return;
+    // tras login: anima los elementos en viewport con IO, y el resto los muestra
+    // directamente a los 600ms para que no queden invisible si el usuario no hace scroll
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: .12 });
+    }, { threshold: 0 });
+
+    const showAll = () =>
+      document.querySelectorAll('.fadein').forEach(el => el.classList.add('in'));
+
+    const t = setTimeout(showAll, 600);
 
     const observeNew = () => {
       document.querySelectorAll('.fadein:not(.observed)').forEach(el => {
@@ -14,12 +22,11 @@ function useFadeIn(dep){
       });
     };
 
-    // MutationObserver: captura elementos .fadein en cuanto React los añade al DOM
     const mo = new MutationObserver(observeNew);
     mo.observe(document.body, { childList: true, subtree: true });
     observeNew();
 
-    return () => { io.disconnect(); mo.disconnect(); };
+    return () => { clearTimeout(t); io.disconnect(); mo.disconnect(); };
   }, [dep]);
 }
 
