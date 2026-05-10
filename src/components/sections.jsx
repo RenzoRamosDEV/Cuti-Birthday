@@ -117,17 +117,6 @@ function Hero({ onStart, onSecret }){
         )}
       </div>
 
-      {/* hidden button — bottom-left */}
-      <button onClick={onSecret} style={{
-        position:'absolute', bottom:36, left:'5vw',
-        padding:'10px 16px', border:`1.5px dashed ${SCRAP.red}`, borderRadius:24,
-        font:'500 14px "Caveat"', color:SCRAP.red,
-        background:'rgba(255,255,255,.4)', cursor:'pointer',
-        transform:'rotate(-2deg)', animation:'wobble 3s ease-in-out infinite',
-        '--r':'-2deg',
-      }}>
-        ⚠ no pulses esto
-      </button>
 
       {/* scroll cue */}
       <div style={{
