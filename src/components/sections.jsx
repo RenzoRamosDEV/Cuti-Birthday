@@ -172,21 +172,21 @@ const CAP1_IMGS = {
 };
 
 const MEMORIES = [
-  { seed:'mem1', date:'agosto 2018', title:'la noche que rompimos el espejo',
-    caption:'pero qué hicimos',
-    body:'Y mamá nos buscó toda la tarde por toda la casa. Tú decías "no fui yo" mirando al techo. Eso lo hago yo ahora cuando me preguntan algo. Te lo robé.',
+  { seed:'mem1', date:'', title:'Un sustito para nada actuado :)',
+    caption:'QUE MELLOOOOOO!!',
+    body:'Recuerdo este dia, por que nos bombardearon a fotos ese dia jajaja.',
     rot:-3, tapeRot:-6, tapeColor:'rgba(197,74,58,.4)' },
-  { seed:'mem2', date:'verano 2019', title:'el viaje en el coche viejo',
-    caption:'la radio rota',
-    body:'Cantaste durante seis horas seguidas con la radio rota, y en algún momento entre Albacete y Murcia decidimos que íbamos a ser mejores amigas para siempre. Cumplido.',
+  { seed:'mem2', date:'', title:'Obviamente imponiendo mus gusto musicales.',
+    caption:'Su respetivo orejitas de conejito con la mano xD',
+    body:'Pensar que despues le cojiste miedo a Michael Jackson xDDDD',
     rot:2, tapeRot:6, tapeColor:'rgba(74,106,138,.45)' },
-  { seed:'mem3', date:'invierno 2020', title:'el día del confinamiento',
-    caption:'cuarentena',
-    body:'Hicimos un mural de pósits en la cocina con los nombres de todos los sitios a los que iríamos cuando esto acabara. Solo fuimos a tres. Pero los tres contigo.',
+  { seed:'mem3', date:'', title:'De camino a Huacho',
+    caption:'Huachitooo!',
+    body:'Cada que hibamos a Huacho en el coche, con musica de los 80s y 90s, alta influencia nos metieron a esa musica a los dos jajajaja',
     rot:-2, tapeRot:4, tapeColor:'rgba(227,179,74,.45)' },
-  { seed:'mem4', date:'tu graduación · junio 2022', title:'cuando lloraste con la birrete puesto',
-    caption:'orgullosa',
-    body:'Yo lloré más. Mamá lloró más todavía. Papá fingió que no, pero papá nunca finge tan mal. Esa foto la tengo de fondo de pantalla desde entonces.',
+  { seed:'mem4', date:'', title:'Aqui no estoy yo XD',
+    caption:'Pura tecnologia de punta',
+    body:'No estoy en la foto pero esta foto es la cagada con tu ordenador jajajajaj.',
     rot:3, tapeRot:-4, tapeColor:'rgba(93,122,79,.45)' },
 ];
 
@@ -239,7 +239,7 @@ function Memories(){
         <SectionHeader
           eyebrow="capítulo I" number="07 momentos"
           title={<>Algunos recuerdos <em>que está bien recordar.</em></>}            
-          subtitle="Mejor pocos con peso, que muchos rellenando huecos. Aquí están los míos contigo, en orden."
+          subtitle="Mejor pocos con peso, que muchos rellenando huecos. Aquí están los míos contigo."
         />
         <div className="memories-list">
           {MEMORIES.map((m,i)=>(<MemoryCard key={m.seed} m={m} idx={i}/>))}
