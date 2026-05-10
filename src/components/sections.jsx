@@ -432,35 +432,38 @@ function Carta({ onOpen, opened }){
             }}/>
             <div style={{
               font:'500 14px "Caveat"', color:SCRAP.inkSoft, marginBottom:18,
-            }}>10 de mayo, 2026 — el día de tus 19</div>
+            }}>25 de mayo de 2026</div>
 
             <div style={{font:'400 22px/1.65 "Caveat"', color:SCRAP.ink}}>
               <p style={{margin:'0 0 14px'}}>
-                Querida Joselyn,
+                Josy, Josy
               </p>
               <p style={{margin:'0 0 14px'}}>
-                Llevo dos semanas pensando qué escribirte aquí. Borré tres versiones.
-                Esta también la voy a borrar pero ya no me da tiempo, así que se queda.
+                Este texto seguro está mal escrito jajaj, este no quise pasarlo por ChatGPT para que veas mi love xD, me ha costado escribirlo jajaja.
               </p>
               <p style={{margin:'0 0 14px'}}>
-                Tienes diecinueve. Eso ya no es ser pequeña. Y aun así sigues siendo
-                la primera persona a la que le cuento todo. Eso no va a cambiar.
-                <span style={{color:SCRAP.red, fontFamily:'"Homemade Apple", cursive', fontSize:'.9em'}}> nunca.</span>
+                Ya tienes 19 añitos, toda una mujer, fuerte y valiente a pesar de todo lo que hemos tenido que pasar. Me sorprende lo mucho que has crecido y me hace feliz verte progresar.
               </p>
               <p style={{margin:'0 0 14px'}}>
-                Gracias por reírte de mis chistes malos. Por escuchar mis dramas
-                inventados. Por enseñarme a defenderme cuando yo te enseñaba a sumar.
-                Hicimos un buen trato.
+                Más que felicitarte, te quiero agradecer por haber estado en mi vida, desde las peleas de niños sin ningún motivo relevante, desde que nos lanzábamos el Pocoyó de cama a cama, de nuestros intentos de asesinato, hasta cuando íbamos a comprar unas papas ondas picantes jajaja.
               </p>
               <p style={{margin:'0 0 14px'}}>
-                Y si algún día se te olvida lo que vales, vuelve a esta página.
-                Aquí está todo escrito.
+                Te agradezco el hecho de que existas. Aunque no lo creas, si yo sigo adelante es por ti, para que veas que todo se puede hacer a pesar de que las cosas se pongan mal. Y por si la cagas, pueda mantenerte xDDDD.
+              </p>
+              <p style={{margin:'0 0 14px'}}>
+                Quiero que pases un bonito cumpleaños, a pesar de que no esté ahí presencialmente. Que sepas que siempre estaré para ti.
+              </p>
+              <p style={{margin:'0 0 14px'}}>
+                Ya en un futuro no muy lejano, y cuando me lo pueda permitir, prometo que tus cumpleaños siempre los pasaré contigo : ).
+              </p>
+              <p style={{margin:'0 0 14px'}}>
+                Bueno, te digo eso nomás porque se me da fatal expresarme jajaja.
               </p>
               <p style={{margin:'24px 0 0', font:'400 26px "Homemade Apple", cursive', color:SCRAP.red}}>
-                te quiero más que nada.
+                Te quiero más que nada.
               </p>
               <p style={{margin:'4px 0 0', font:'500 18px "Caveat"', color:SCRAP.inkSoft}}>
-                — yo. tu hermana. la pesada. la de siempre.
+                — Renzo "El Bibi", tu hermano, el más pesado jaja.
               </p>
             </div>
 
@@ -484,7 +487,7 @@ function Footer(){
       <div style={{
         font:'500 14px "Caveat"', color:SCRAP.inkSoft, marginBottom:8,
       }}>
-        hecho con calma · 10 de mayo de 2026 · 19 años
+        Una hecha por un Bibi jajaja, para mi motivo personificado de vivir.
       </div>
       <div style={{
         font:'400 13px "Caveat"', color:SCRAP.inkSoft+'aa',
