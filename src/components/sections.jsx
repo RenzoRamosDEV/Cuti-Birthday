@@ -43,7 +43,7 @@ function Hero({ onStart, onSecret }){
             font:'500 13px "Caveat"', letterSpacing:'.3em', textTransform:'uppercase',
             color:SCRAP.red, marginBottom:6,
           }}>
-            un cuaderno para mi hermana
+            un regalo para mi hermanita
           </div>
           <h1 style={{
             margin:0, font:'italic 300 clamp(58px, 9vw, 120px)/.92 "Fraunces"',
