@@ -3,19 +3,23 @@
 // Aplica fade-in con IntersectionObserver a todos los elementos con clase .fadein
 function useFadeIn(dep){
   React.useEffect(()=>{
-    let io;
-    const connect = () => {
-      if(io) io.disconnect();
-      io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-      }, { threshold: .12 });
-      document.querySelectorAll('.fadein').forEach(el => io.observe(el));
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: .12 });
+
+    const observeNew = () => {
+      document.querySelectorAll('.fadein:not(.observed)').forEach(el => {
+        el.classList.add('observed');
+        io.observe(el);
+      });
     };
-    // intenta varias veces para capturar elementos que React renderiza de forma asíncrona
-    connect();
-    const t1 = setTimeout(connect, 100);
-    const t2 = setTimeout(connect, 400);
-    return () => { clearTimeout(t1); clearTimeout(t2); if(io) io.disconnect(); };
+
+    // MutationObserver: captura elementos .fadein en cuanto React los añade al DOM
+    const mo = new MutationObserver(observeNew);
+    mo.observe(document.body, { childList: true, subtree: true });
+    observeNew();
+
+    return () => { io.disconnect(); mo.disconnect(); };
   }, [dep]);
 }
 
