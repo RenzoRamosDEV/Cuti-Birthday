@@ -10,7 +10,7 @@ Desplegada en GitHub Pages: `https://renzoramosdev.github.io/Cuti-Birthday/`
 
 - **React 18** vía CDN (sin bundler ni paso de build)
 - **Babel Standalone** para JSX en el navegador
-- CSS personalizado con estética de scrapbook / cuaderno
+- CSS personalizado con estética de scrapbook / cuaderno 
 
 ## Estructura
 
@@ -42,11 +42,3 @@ La página es de acceso privado. El login usa **PBKDF2-SHA256 con 200 000 iterac
 - Bloqueo temporal progresivo (5 min tras 5 intentos, 1 hora tras 10)
 - Mínimo 600 ms por intento para evitar timing attacks
 - Sesión en `sessionStorage` (se pierde al cerrar la pestaña)
-
-## Despliegue
-
-Al ser HTML + JS + CSS estáticos, basta con empujar a la rama `main` y GitHub Pages lo sirve directamente. No hay dependencias que instalar ni comandos de build.
-
-```bash
-git push origin main
-```
