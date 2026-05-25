@@ -10,7 +10,7 @@ Desplegada en GitHub Pages: `https://renzoramosdev.github.io/Cuti-Birthday/`
 
 - **React 18** vía CDN (sin bundler ni paso de build)
 - **Babel Standalone** para JSX en el navegador
-- CSS personalizado con estética de scrapbook / cuaderno
+- CSS personalizado con estética de scrapbook / cuaderno 
 
 ## Estructura
 
