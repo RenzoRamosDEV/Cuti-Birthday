@@ -1,8 +1,13 @@
 // Autenticación — componente Login + toda la lógica de seguridad
 
 // PBKDF2-SHA256, 200k iteraciones, sal: joselyn-pages-2026
-// Solo el hash derivado está aquí; la clave original nunca se almacena
-const PWD_HASH   = '682ad732b21c34dbeaa36716d9ce57f401aabdef8ded75bb9cbeebbae967cb0d';
+// Solo los hashes derivados están aquí; las claves originales nunca se almacenan.
+// Cualquiera de estas claves da acceso (todas con la misma seguridad).
+const PWD_HASHES = [
+  '682ad732b21c34dbeaa36716d9ce57f401aabdef8ded75bb9cbeebbae967cb0d', // clave original
+  '1ac991ab8b7029f7010e345ccbbb4e0ee7763b2906e9cfe69c7b2e5e2cae691a', // renzoramos
+];
+const isValidHash = h => typeof h === 'string' && h.length === 64 && PWD_HASHES.includes(h);
 const SALT       = 'joselyn-pages-2026';
 const ITERATIONS = 200000;
 const SESSION_KEY  = 'jpp_v2';
@@ -20,9 +25,7 @@ async function deriveKey(password){
 }
 
 async function checkSession(){
-  const stored = sessionStorage.getItem(SESSION_KEY);
-  if(!stored || stored.length !== 64) return false;
-  return stored === PWD_HASH;
+  return isValidHash(sessionStorage.getItem(SESSION_KEY));
 }
 
 function getLockState(){
@@ -71,7 +74,7 @@ function Login({ onUnlock }){
       // espera mínimo 600ms siempre para evitar timing attacks
       await new Promise(r => setTimeout(r, Math.max(0, 600 - (Date.now() - start))));
 
-      if(hash === PWD_HASH){
+      if(isValidHash(hash)){
         setLockState({ attempts:0, until:0 });
         sessionStorage.setItem(SESSION_KEY, hash);
         window.location.reload();
