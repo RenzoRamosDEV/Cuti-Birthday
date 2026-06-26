@@ -1,13 +1,4 @@
-// Elementos decorativos: flechas dibujadas, iconos y confeti
-
-function DoodleArrow({ w=120, h=60, style, color=SCRAP.ink }){
-  return (
-    <svg width={w} height={h} viewBox="0 0 120 60" style={style} fill="none">
-      <path d="M5 40 C 30 5, 80 5, 110 25" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="4 4"/>
-      <path d="M101 18 L110 25 L103 33"   stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
-  );
-}
+// Elementos decorativos: iconos y confeti
 
 function Doodle({ type='heart', size=20, color=SCRAP.red, style }){
   const paths = {
@@ -64,4 +55,4 @@ function Confetti({ active, count=140, onDone }){
   );
 }
 
-Object.assign(window, { DoodleArrow, Doodle, Confetti });
+Object.assign(window, { Doodle, Confetti });

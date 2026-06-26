@@ -1,4 +1,4 @@
-// Sección capítulo III — carta de cumpleaños
+// Sección capítulo IV — carta de cumpleaños
 
 function Carta({ onOpen, opened }){
   return (
@@ -12,7 +12,7 @@ function Carta({ onOpen, opened }){
 
       <div style={{ position:'relative', maxWidth:760, margin:'0 auto', textAlign:'center' }}>
         <div style={{ font:'500 12px "Caveat"', letterSpacing:'.32em', textTransform:'uppercase', color:SCRAP.yellow, marginBottom:14 }}>
-          capítulo III · la carta
+          capítulo IV · la carta
         </div>
         <h2 style={{ margin:0, font:'italic 300 clamp(48px,7vw,88px)/.95 "Fraunces"', letterSpacing:'-.02em' }}>
           una carta<br/>

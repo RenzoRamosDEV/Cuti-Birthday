@@ -22,7 +22,6 @@ const ctaPrimary = () => ({
 
 function Hero({ onStart }){
   const mobile = useIsMobile();
-  const imgs   = HERO_IMGS;
 
   return (
     <section className="paper grain" style={{
@@ -39,6 +38,7 @@ function Hero({ onStart }){
           <a href="#portada"   style={navLink(true)}>portada</a>
           <a href="#recuerdos" style={navLink()}>recuerdos</a>
           <a href="#tu"        style={navLink()}>cosas tuyas</a>
+          <a href="#video"     style={navLink()}>video</a>
           <a href="#carta"     style={navLink()}>carta</a>
         </nav>
       </header>
@@ -69,10 +69,10 @@ function Hero({ onStart }){
         </div>
 
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:mobile?16:24, justifyItems:'center', padding:'10px 0 30px' }}>
-          <Polaroid seed="hero-1" src={imgs.lafotoclave}                     caption="Posiblemente nuestra mejor foto jajaja"  w={mobile?150:200} h={mobile?150:200} rot={6}  tapeRot={4}/>
-          <Polaroid seed="hero-2" src={imgs.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={mobile?150:200} h={mobile?150:200} rot={-4} tapeRot={10}/>
-          <Polaroid seed="hero-3" src={imgs.mifavorita}                      caption="Mi foto favorita"                        w={mobile?150:200} h={mobile?150:200} rot={-7} tapeRot={-10}/>
-          <Polaroid seed="hero-4" src={imgs.sonrisaperfecta}                 caption="Sonrisa perfectaa... ♡"                  w={mobile?150:200} h={mobile?150:200} rot={5}  tapeRot={2}/>
+          <Polaroid seed="hero-1" src={HERO_IMGS.lafotoclave}                     caption="Posiblemente nuestra mejor foto jajaja"  w={mobile?150:200} h={mobile?150:200} rot={6}  tapeRot={4}/>
+          <Polaroid seed="hero-2" src={HERO_IMGS.aquicreoquedespuesllorastesjaja} caption="Aqui creo que despues lloraste jajaja ✿" w={mobile?150:200} h={mobile?150:200} rot={-4} tapeRot={10}/>
+          <Polaroid seed="hero-3" src={HERO_IMGS.mifavorita}                      caption="Mi foto favorita"                        w={mobile?150:200} h={mobile?150:200} rot={-7} tapeRot={-10}/>
+          <Polaroid seed="hero-4" src={HERO_IMGS.sonrisaperfecta}                 caption="Sonrisa perfectaa... ♡"                  w={mobile?150:200} h={mobile?150:200} rot={5}  tapeRot={2}/>
         </div>
       </div>
 

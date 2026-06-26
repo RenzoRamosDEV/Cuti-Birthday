@@ -15,7 +15,6 @@ body{overflow-x:hidden}
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='1.2' numOctaves='2'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .25  0 0 0 0 .12  0 0 0 .35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-@keyframes wobble{0%,100%{transform:rotate(var(--r,0deg)) translateY(0)}50%{transform:rotate(var(--r,0deg)) translateY(-3px)}}
 @keyframes drop{0%{transform:translateY(-20vh) rotate(0deg);opacity:0}10%{opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:1}}
 
 .underline-wavy{text-decoration:underline wavy #c54a3a;text-underline-offset:6px}
@@ -24,6 +23,3 @@ body{overflow-x:hidden}
 .fadein.in{opacity:1;transform:none}
 
 button{font-family:inherit;color:inherit}
-
-.torn{position:relative;height:32px}
-.torn::before{content:"";position:absolute;inset:0;background:#f3e9d2;clip-path:polygon(0 60%, 4% 80%, 8% 50%, 14% 90%, 20% 60%, 26% 80%, 32% 55%, 38% 90%, 44% 60%, 50% 80%, 56% 55%, 62% 90%, 68% 60%, 74% 80%, 80% 55%, 86% 90%, 92% 60%, 100% 80%, 100% 100%, 0 100%)}

@@ -15,21 +15,11 @@ function Traits(){
   return (
     <section id="tu" className="paper grain" style={{ position:'relative', padding:'90px 6vw' }}>
       <div style={{ position:'relative', maxWidth:1100, margin:'0 auto' }}>
-        <div style={{ textAlign:'center', maxWidth:720, margin:'0 auto 50px', padding:'0 20px' }}>
-          <div style={{ display:'inline-flex', alignItems:'center', gap:10, marginBottom:14 }}>
-            <span style={{ width:28, height:1, background:SCRAP.inkSoft, opacity:.4 }}/>
-            <span style={{ font:'500 12px "Caveat"', letterSpacing:'.32em', textTransform:'uppercase', color:SCRAP.red }}>
-              capítulo II · cosas que te hacen tú
-            </span>
-            <span style={{ width:28, height:1, background:SCRAP.inkSoft, opacity:.4 }}/>
-          </div>
-          <h2 style={{ margin:0, font:'italic 300 clamp(40px,6vw,72px)/1 "Fraunces"', letterSpacing:'-.02em', color:SCRAP.ink }}>
-            cosas tuyas
-          </h2>
-          <p style={{ marginTop:14, font:'400 16px/1.5 "Fraunces"', color:SCRAP.inkSoft }}>
-            Algunas pocas cosas que hacen que seas tú.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="capítulo II" number="cosas que te hacen tú"
+          title="cosas tuyas"
+          subtitle="Algunas pocas cosas que hacen que seas tú."
+        />
 
         <div className="traits-grid" style={{
           display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',

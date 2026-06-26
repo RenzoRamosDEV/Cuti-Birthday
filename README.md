@@ -17,20 +17,22 @@ Desplegada en GitHub Pages: `https://renzoramosdev.github.io/Cuti-Birthday/`
 ```
 index.html                  # Punto de entrada — carga scripts en orden
 src/
-  theme.js                  # Paleta de colores y utilidades (SCRAP, Tape, Confetti)
-  hooks.js                  # Hooks reutilizables (useFadeIn, etc.)
+  theme.js                  # Paleta de colores (SCRAP) y hashStr
+  hooks.js                  # Hooks reutilizables (useFadeIn, useIsMobile)
   auth.jsx                  # Login con PBKDF2-SHA256 y bloqueo por intentos
   main.jsx                  # Raíz de la app (App + estado global)
   styles/main.css
-  data/images.json           # Metadatos de las fotos
+  assets/                    # Logo, video y metadatos de fotos
   components/
     ui/
-      polaroid.jsx           # Componente Polaroid con pie de foto
-      doodles.jsx            # Decoraciones SVG tipo doodle
+      polaroid.jsx           # Photo, Tape y Polaroid
+      doodles.jsx            # Decoraciones SVG (Doodle) y Confetti
+      section-header.jsx     # Encabezado de sección compartido
     sections/
       hero.jsx               # Sección inicial con grid de polaroids
       memories.jsx           # Galería de recuerdos
       traits.jsx             # Rasgos / cosas que la definen
+      video.jsx              # Videito reproducible
       carta.jsx              # Carta desplegable
       footer.jsx             # Pie de página
 ```

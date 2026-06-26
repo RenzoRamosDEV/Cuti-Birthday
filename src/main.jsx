@@ -31,6 +31,7 @@ function App(){
       <Hero    onStart={handleStart}/>
       <Memories/>
       <Traits/>
+      <VideoSection/>
       <Carta   opened={letterOpened} onOpen={handleOpenLetter}/>
       <Footer/>
       <Confetti active={confettiOn} onDone={() => setConfettiOn(false)}/>
