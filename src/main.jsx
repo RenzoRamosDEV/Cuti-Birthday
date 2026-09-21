@@ -3,6 +3,7 @@
 function App(){
   const [unlocked,     setUnlocked]     = React.useState(false);
   const [checking,     setChecking]     = React.useState(true);
+  const [view,         setView]         = React.useState('picker'); // picker · cumple · flores
   const [letterOpened, setLetterOpened] = React.useState(false);
   const [confettiOn,   setConfettiOn]   = React.useState(false);
 
@@ -13,10 +14,18 @@ function App(){
     });
   }, []);
 
-  useFadeIn(unlocked);
+  useFadeIn(unlocked && view === 'cumple');
 
   if(checking)  return null;
   if(!unlocked) return <Login onUnlock={() => setUnlocked(true)}/>;
+
+  const goBack = () => {
+    setView('picker');
+    window.scrollTo(0, 0);
+  };
+
+  if(view === 'picker') return <Picker onPick={setView}/>;
+  if(view === 'flores') return <Flores onBack={goBack}/>;
 
   const handleStart = () => {
     document.getElementById('recuerdos')?.scrollIntoView({ behavior:'smooth', block:'start' });
@@ -34,6 +43,7 @@ function App(){
       <VideoSection/>
       <Carta   opened={letterOpened} onOpen={handleOpenLetter}/>
       <Footer/>
+      <Volver  onBack={goBack}/>
       <Confetti active={confettiOn} onDone={() => setConfettiOn(false)}/>
     </>
   );

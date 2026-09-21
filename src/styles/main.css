@@ -23,3 +23,8 @@ body{overflow-x:hidden}
 .fadein.in{opacity:1;transform:none}
 
 button{font-family:inherit;color:inherit}
+
+/* Balanceo de las flores del ramo: cada una gira ligeramente sobre el nudo */
+@keyframes sway{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.3deg)}}
+.flor{transform-box:view-box;transform-origin:200px 392px;animation:sway 6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.flor{animation:none}}
