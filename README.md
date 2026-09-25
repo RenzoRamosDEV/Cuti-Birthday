@@ -2,7 +2,7 @@
 
 # Joselyn Pages
 
-**Una página privada hecha con cariño para celebrar los 19 años de Joselyn.**
+**Una página privada hecha con cariño para Joselyn.**
 
 Recuerdos en formato polaroid, un vídeo, una carta de su hermano y confeti al abrirla.
 
